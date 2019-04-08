@@ -1,0 +1,17 @@
+{
+  "name": "basic-api",
+  "version": "1.0.0",
+  "description": "Basic node.js api",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "nodemon ./index.js"
+  },
+  "author": "Justin Cook",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  },
+  "dependencies": {
+    "uuid": "^3.3.2"
+  }
+}
