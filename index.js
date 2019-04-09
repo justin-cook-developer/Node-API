@@ -60,6 +60,7 @@ server.on('request', async (request, response) => {
       const id = url.slice(5);
       const { text } = await extractBodyJSON(request);
       let updatedItem;
+
       database.items = database.items.map(item => {
         if (item.id === id) {
           return (updatedItem = { id, text });
@@ -67,6 +68,7 @@ server.on('request', async (request, response) => {
           return item;
         }
       });
+
       sendPayload(response, updatedItem);
     } else if (method === 'DELETE') {
       const id = url.slice(5);
@@ -105,7 +107,7 @@ server.on('request', async (request, response) => {
     }
 
     if (contentType == 'text/html' && extname == '') filePath += '.html';
-    
+
     fileSystem.readFile(filePath, (e, data) => {
       if (!e) {
         response.statusCode = 200;
